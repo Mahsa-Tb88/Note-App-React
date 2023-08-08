@@ -1,0 +1,21 @@
+body{
+    background-color: #f8fafc;
+}
+.header-app{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    border-bottom: 1px solid #cbd5e1;
+}
+.header-app-title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.header-app-title h1{
+    margin-right: 5px;
+}
+.header-app-title span{
+    font-size: 1.5em;
+}
+
