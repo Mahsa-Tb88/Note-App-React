@@ -1,6 +1,7 @@
+import style from "./StateNote.module.css";
 const StateNote = () => {
   return (
-    <div>
+    <div className={style.stateNote}>
       <div>
         <span>All</span>
         <span>2</span>
