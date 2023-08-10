@@ -1,18 +1,18 @@
 import style from "./StateNote.module.css";
-const StateNote = () => {
+const StateNote = ({ notes }) => {
   return (
     <div className={style.stateNote}>
       <div>
         <span>All</span>
-        <span>2</span>
+        <span>{notes.length}</span>
       </div>
       <div>
         <span>Completed</span>
-        <span>3</span>
+        <span>{notes.filter((n) => n.Completed).length}</span>
       </div>
       <div>
         <span>Uncompleted</span>
-        <span>4</span>
+        <span>{notes.filter((n) => !(n.Completed)).length}</span>
       </div>
     </div>
   );
