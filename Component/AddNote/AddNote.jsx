@@ -11,6 +11,10 @@ const AddNote = ({ addNoteHandler }) => {
   };
   const submitHandler = (e) => {
     e.preventDefault();
+    console.log(note.title);
+
+    note.title = note.title.length == 0 ? "new note" : note.title;
+    note.text = note.text.length == 0 ? "new text" : note.text;
     addNoteHandler(note);
     setNote({ title: "", text: "" });
   };

@@ -6,6 +6,8 @@ import "./App.css";
 import { useState } from "react";
 const App = () => {
   const [notes, setNotes] = useState([]);
+  const [sortValue, setSortValue] = useState("newest");
+
   const addNoteHandler = (note) => {
     const newNote = {
       id: new Date().getTime(),
@@ -28,9 +30,10 @@ const App = () => {
     const newNotes = notes.filter((note) => note.id != id);
     setNotes(newNotes);
   };
-  const sortHandler=(value)=>{
+  const sortHandler = (value) => {
     console.log(value);
-  }
+  };
+ 
   return (
     <div className="app">
       <div className="header-app">
@@ -38,7 +41,10 @@ const App = () => {
           <h1>My Notes</h1>
           <span>({notes.length})</span>
         </div>
-        <SortNotes sortHandler={sortHandler} />
+        <SortNotes
+          sortValue={sortValue}
+          onSort={(e) => setSortValue(e.target.value)}
+        />
       </div>
       <div className="body-app">
         <div className="body-app_addNote">
@@ -48,6 +54,7 @@ const App = () => {
           <StateNote notes={notes} />
           <ListNote
             notes={notes}
+            sortValue={sortValue}
             checkHandler={checkHandler}
             deleteHandler={deleteHandler}
           />
